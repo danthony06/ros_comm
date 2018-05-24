@@ -355,7 +355,7 @@ private:
   template<int i>
   void cb(const typename mpl::at_c<Events, i>::type& evt)
   {
-    this->template add<i>(evt);
+    this->template add<i>(typename mpl::at_c<Events, i>::type(evt));
   }
 
   uint32_t queue_size_;
